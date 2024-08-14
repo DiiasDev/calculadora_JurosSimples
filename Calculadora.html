@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Juros Simples</h1>
+        <input id="montante" type="text" placeholder="Entre com o montante" >
+        <input id="meses" type="text" placeholder="Entre com os meses" >
+        <input id="taxa" type="text" placeholder="Entre com a taxa" >
+        <button onclick="calculadora()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function calculadora () {
+            let montante = parseFloat(document.getElementById('montante').value);
+            let meses = parseFloat(document.getElementById('meses').value);
+            let taxa = parseFloat(document.getElementById('taxa').value) / 100;
+
+
+            let juros = montante * taxa * meses;
+            let montanteTotal = juros + montante; 
+
+            document.getElementById('resultado').innerText = `Juros: R$ ${juros.toFixed(2)}\nMontante Total: R$ ${montanteTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+</html>
