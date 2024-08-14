@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "/html/Calculadora.html"
+to = "/Calculadora.html"
 status = 301
